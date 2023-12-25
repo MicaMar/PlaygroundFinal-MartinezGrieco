@@ -1,0 +1,12 @@
+{% extends 'padre.html' %}
+
+{% block cambiante %}
+    <h1>Lista de Clientes</h1>    
+    <ul>
+        
+        {% for cliente in lista_clientes  %}
+            <li>{{cliente.nombre}} {{cliente.apellido}}</li>            
+        {% endfor %}
+            
+    </ul>
+{% endblock cambiante %}

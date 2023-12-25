@@ -1,0 +1,73 @@
+{% extends 'padre.html' %}
+
+
+{% block cambiante %}
+    
+
+<div class="text-center">
+<h1>Lista productos Textiles:</h1>
+
+  {% if mensaje_textil %}
+
+<div class="alert alert-success" role="alert">
+  {{mensaje_textil}}
+  
+{% endif %}
+   </div>
+<br>
+
+
+{% for textil  in lista_textiles  %}
+  
+
+
+
+  <div class="card mb-3" style="max-width: 700px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="\static\img\textiles.jpg" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title" style="color: darkslategrey;">{{textil.producto}} - {{textil.tipo}}</h5>
+          <p class="card-text" style="color: midnightblue;" > precio: ${{textil.precio}}</p>
+          <p class="card-text"><small class="text-body-secondary"></small></p>
+          
+          <form action="{% url 'EliminarTextil' textil.id %}" method="post">{% csrf_token %}
+            
+        
+         
+            <button type="submit" class="btn btn-primary">Eliminar producto</button>
+        </form>
+        
+        <br>
+            
+            <a class="btn btn-primary" href="{% url 'EditarTextil' textil.id %}" role="button">Editar producto</a>
+           
+
+        
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+
+  
+ <br>
+
+
+
+{% endfor %}
+    
+ <div class="text-center"> 
+    <a class="btn btn-primary" href="{% url 'AdministradorTextiles' %}" role="button">Agregar producto</a>
+</div> 
+
+
+{% endblock cambiante %}
+    

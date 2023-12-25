@@ -1,0 +1,27 @@
+{% extends 'padre.html' %}
+
+
+
+{% block cambiante %}
+<div class = "text-center">
+    <h1>PANEL ADMINISTRADOR</h1>
+    <br>
+    <h2>SECCIÓN PRODUCTOS TEXTILES </h2>
+        <p>{{mensaje_celular}}</p>
+    <p>Aqui podemos editar productos textiles de nuestro stock</p>
+    <br>
+    <br>
+<div class=" text-center">
+    <form action="{% url 'EditarTextil' id %}" method="post">{% csrf_token %}
+
+        {{agregarTextil.as_p}}
+
+       
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+
+
+    </form>
+   </div>
+</div>
+{% endblock cambiante %}
+    

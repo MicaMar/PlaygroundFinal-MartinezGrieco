@@ -1,0 +1,62 @@
+{% extends 'padre.html' %}
+
+<!-- ////// ESTE HTML MUESTRA EL RESULTADO DE LA BUSQUEDA DE ACCESORIOS///// -->
+{% block cambiante %}
+ <div class="text-center">  
+   
+   <h1>Resultado de la busqueda</h1>
+<br>
+<p>{{mc}}</p>
+
+<!-- ////MUESTRA ACCESORIOS//// -->
+   
+{% for accesorio in accesorios %}
+<h2> Accesorios </h2>
+
+<li>
+   <div class="card mb-3" style="max-width: 700px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="\static\img\accesorios.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title" style="color: darkslategrey;">{{accesorio.producto}} - {{accesorio.tipo}}</h5>
+            <p class="card-text" style="color: midnightblue;" > precio: ${{accesorio.precio}}</p>
+            <p class="card-text"><small class="text-body-secondary"></small></p>
+            <a class="btn btn-primary" href="{% url 'carrito'  %}" role="button">Añadir a carrito</a>
+  
+            
+          
+          </div>
+        </div>
+      </div>
+    </div>
+           
+ </li>   
+{% endfor %}
+    
+
+
+
+
+
+   
+   <br>
+
+<a class="btn btn-primary" href="{% url 'buscarAC' %}" role="button">Buscar de nuevo</a>
+
+</div>
+
+
+
+
+
+   
+
+
+</div>
+     
+{% endblock cambiante %}
+
+   

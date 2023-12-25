@@ -1,0 +1,26 @@
+{% extends 'padre.html' %}
+
+
+
+{% block cambiante %}
+<div class="text-center">
+    
+    
+    <h1>Contacto</h1>
+    <br>
+    <p>Correo: twenties.coderhouse@gmail.com</p>
+    <p>Envianos tu consulta y nos pondremos en contacto a la brevedad: </p>
+    <br>
+    
+    <form action="{% url 'contacto'  %}" method="post">{% csrf_token %}
+
+        {{form.as_p}}
+
+     <button type="submit" class="btn btn-primary"  >Enviar consulta</button>
+
+    </form>
+
+    
+
+{% endblock cambiante %}
+    

@@ -1,0 +1,54 @@
+{% extends 'padre.html' %}
+
+{% block cambiante %}
+<div class="text-center">
+  <h1>Lista de accesorios:</h1>
+  
+    {% if mensaje_accesorio %}
+  
+  <div class="alert alert-success" role="alert">
+    {{mensaje_accesorio}}
+    
+  {% endif %}
+     </div>
+  <br>
+       
+       
+        {% for accesorio in lista_accesorios  %}
+        
+            
+        <li> 
+  <div class="card mb-3" style="max-width: 700px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="\static\img\accesorios.jpg" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body"> 
+          
+          <h5 class="card-title" style="color: darkslategrey;"> producto: {{accesorio.producto}} tipo: {{accesorio.tipo}}</h5>
+          <p class="card-text" style="color: midnightblue;" > precio: ${{accesorio.precio}}</p>
+          <p class="card-text"><small class="text-body-secondary"></small></p>
+          
+          <form action="{% url 'EliminarAccesorio' accesorio.id %}" method="post">{% csrf_token %}
+            
+        
+         
+            <button type="submit" class="btn btn-primary">Eliminar accesorio</button>
+        </form>
+        
+        <br>
+            
+            <a class="btn btn-primary" href="{% url 'EditarAccesorio' accesorio.id %}" role="button">Editar accesorio</a>
+           
+        </li>   
+        {% endfor %}
+            
+            
+        <div class="text-center"> 
+            <a class="btn btn-primary" href="{% url 'AdministradorAccesorios' %}" role="button">Agregar accesorio</a>
+        </div> 
+        
+
+    
+{% endblock cambiante %}

@@ -1,0 +1,25 @@
+{% extends 'padre.html' %}
+
+
+{% block cambiante  %}
+<div class="text-center">
+<h1>Panel de busqueda</h1>
+<br>
+<h2>Busqueda de accesorios:</h2>
+<br>
+<form action= "{% url 'buscarAC' %}" method="get" >
+        
+  <div class="input-group mb-3">
+        <input type="text" name = "buscar2" class="form-control" placeholder="Ingrese accesorio" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button type="summit" class="btn btn-primary">Buscar</button>
+
+
+
+  </div>      
+     
+</form>
+
+{{mensaje}}
+
+
+{% endblock cambiante %}

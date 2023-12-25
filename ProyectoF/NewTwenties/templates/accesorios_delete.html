@@ -1,0 +1,23 @@
+{% extends 'padre.html' %}
+
+
+
+{% block cambiante %}
+
+    <br>
+    <h2>SECCIÓN ACCESORIOS</h2>
+ 
+    <p>Aqui podemos eliminar accesorios de nuestro stock</p>
+    <br>
+    <br>
+
+    <form method="post">{% csrf_token %}
+
+        <p>¿Estás seguro que desea eliminar el producto?</p>
+
+        <button type="submit">Confirmar</button>
+        <button><a href="{% url 'AccesoriosLista' %}">Cancelar</a></button>
+
+    </form>
+   
+{% endblock cambiante %}

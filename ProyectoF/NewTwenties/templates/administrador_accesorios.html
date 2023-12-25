@@ -1,0 +1,26 @@
+{% extends 'padre.html' %}
+
+
+
+{% block cambiante %}
+<div class="text-center">
+    <h1>PANEL ADMINISTRADOR</h1>
+    <br>
+    <h2>SECCIÓN ACCESORIOS</h2>
+    <br>
+        <p>{{mensaje_accesorio}}</p>
+    <br>
+    <p>Aqui podemos agregar o eliminar accesorios de nuestro stock</p>
+    <br>
+    <form action="{% url 'AdministradorAccesorios' %}" method="post" {% csrf_token %} enctype= "multipart/form-data">
+
+        {{agregarAccesorio.as_p}}
+
+      
+        <button type="submit" class="btn btn-primary">Agregar accesorio</button>
+
+
+    </form> 
+
+{% endblock cambiante %}
+    

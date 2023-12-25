@@ -1,0 +1,22 @@
+{% extends 'padre.html' %}
+
+
+
+{% block cambiante %}
+
+    <br>
+    <h2>SECCIÓN ACCESORIOS</h2>
+ 
+    <p>Aqui podemos agregar accesorios a nuestro stock</p>
+    <br>
+    <br>
+
+    <form action="{% url 'AccesoriosCrear' %}" method="post">{% csrf_token %}
+
+        {{form.as_p}}
+
+        <button type="submit">Crear accesorio</button>
+
+    </form>
+   
+{% endblock cambiante %}

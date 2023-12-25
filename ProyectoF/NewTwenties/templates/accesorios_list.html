@@ -1,0 +1,24 @@
+{% extends 'padre.html' %}
+
+{% block cambiante %}
+    <h1>Lista de accesorios</h1>    
+    <ul>
+        
+        {% for accesorio in accesorioslist  %}
+            <li>{{accesorio}}</li>    
+            <div>
+                <button>
+                    <a style="color:black" href="{% url 'AccesoriosEliminar' accesorio.id %}">Eliminar producto</a>
+                </button>
+                <button>
+                    <a style="color:black" href="{% url 'AccesoriosActualizar' accesorio.id.id %}">Editar producto</a>
+                </button>
+            </div>         
+        {% endfor %}
+            
+            
+    </ul>
+
+    <a style="color:black" href="{% url 'AccesoriosCrear' %}">Agregar accesorio</a>
+{% endblock cambiante %}
+    

@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+
+
+
+{% block cambiante %}
+   
+<p class="text-white m-8">
+
+    <h1>ADMINISTRADOR</h1>
+    <a class="btn btn-primary" href="{% url 'ListaAccesorios' %}" role="button">Administrar accesorio</a>
+    
+    <br>
+    <br>
+    <a class="btn btn-primary" href="{% url 'ListaTextiles' %}" role="button"> Administrar producto</a>
+    
+</p>
+{% endblock cambiante %}
+    

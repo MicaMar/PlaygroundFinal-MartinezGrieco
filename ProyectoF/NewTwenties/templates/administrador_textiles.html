@@ -1,0 +1,27 @@
+{% extends 'padre.html' %}
+
+{% block cambiante %}
+<div class="text-center">
+    <h1>PANEL ADMINISTRADOR</h1>
+    <br>
+    <h2>SECCIÓN PRODUCTOS TEXTILES</h2>
+        <p>{{mensaje_textil}}</p>
+    <p>Aqui podemos agregar <!--o eliminar--> productos textiles de nuestro stock</p>
+    <br>
+    <br>
+    <form action="{% url 'AdministradorTextiles' %}" method="post">{% csrf_token %}
+
+        {{agregarTextil.as_p}}
+
+        
+        <button type="submit" class="btn btn-primary">Agregar productos</button>
+
+
+    </form>
+
+ <br>
+    <a class="btn btn-primary" href="{% url 'ListaTextiles' %}" role="button">Lista productos textiles</a>
+
+   </div>
+{% endblock cambiante %}
+    
